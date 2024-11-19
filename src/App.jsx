@@ -81,16 +81,87 @@ function App() {
               <option value="Sports">Sports</option>
               <option value="Tech">Tech</option>
               <option value="Health">Health</option>
-              <option value="Tech">Coding News</option>
-              <option value="Tech">Videogames</option>
+              <option value="Coding">Coding</option>
+              <option value="Games">Videogames</option>
             </select>
           </div>
+          <div className="m-3 d-flex align-items-center">
+            <label>Tags:</label>
+            <div className='d-flex'>
+              <div className='mx-1'>
+                <input
+                  type="checkbox"
+                  value="Tech"
+                  checked={formData.tags.includes('Tech')}
+                  onChange={(e) => {
+                    const updatedTags = e.target.checked
+                      ? [...formData.tags, 'Tech']
+                      : formData.tags.filter(tag => tag !== 'Tech');
+                    setFormData({ ...formData, tags: updatedTags });
+                  }}
+                />
+                Tech
+              </div>
+              <div className='mx-1'>
+                <input
+                  type="checkbox"
+                  value="Sports"
+                  checked={formData.tags.includes("Sports")}
+                  onChange={(e) => {
+                    const updatedTags = e.target.checked
+                      ? [...formData.tags, 'Sports']
+                      : formData.tags.filter(tag => tag !== 'Sports');
+                    setFormData({ ...formData, tags: updatedTags });
+                  }}
+                />Sports
+              </div>
+              <div className='mx-1'>
+                <input
+                  type="checkbox"
+                  value="Sports"
+                  checked={formData.tags.includes("Games")}
+                  onChange={(e) => {
+                    const updatedTags = e.target.checked
+                      ? [...formData.tags, 'Games']
+                      : formData.tags.filter(tag => tag !== 'Games');
+                    setFormData({ ...formData, tags: updatedTags });
+                  }}
+                />Videogames
+              </div>
+              <div className='mx-1'>
+                <input
+                  type="checkbox"
+                  value="Health"
+                  checked={formData.tags.includes("Health")}
+                  onChange={(e) => {
+                    const updatedTags = e.target.checked
+                      ? [...formData.tags, 'Health']
+                      : formData.tags.filter(tag => tag !== 'Health');
+                    setFormData({ ...formData, tags: updatedTags });
+                  }}
+                />Health
+              </div>
+              <div className='mx-1'>
+                <input
+                  type="checkbox"
+                  value="Coding"
+                  checked={formData.tags.includes("Coding")}
+                  onChange={(e) => {
+                    const updatedTags = e.target.checked
+                      ? [...formData.tags, 'Coding']
+                      : formData.tags.filter(tag => tag !== 'Coding');
+                    setFormData({ ...formData, tags: updatedTags });
+                  }}
+                />Coding
+              </div>
 
+            </div>
+          </div>
           <div>
             <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Send</button>
           </div>
           <small id='titleHelperId' className='mb-3 form-text text-muted'>type your new title</small>
-        </form>
+        </form >
 
         <ul className='list-group'>
           {titles.map((articleTitle, index) =>
@@ -104,7 +175,7 @@ function App() {
             </li>)}
 
         </ul>
-      </div>
+      </div >
     </>
   )
 }
