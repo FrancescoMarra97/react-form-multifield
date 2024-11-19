@@ -5,9 +5,19 @@ import './App.css'
 const articleTitle = [
 
 ]
+
+const initialFormData = {
+  title: "",
+  image: "",
+  content: "",
+  category: "",
+  tags: [],
+  published: false,
+}
 function App() {
   const [titles, setTitle] = useState(articleTitle)
   const [newTitle, setNewTitle] = useState("")
+  const [formData, setFormData] = useState(initialFormData)
 
   function addTitle(e) {
     e.preventDefault()
@@ -31,7 +41,7 @@ function App() {
   }
   return (
     <>
-      <div>test</div>
+
       <div className="container">
 
         <div>
@@ -39,9 +49,24 @@ function App() {
         </div>
         <form onSubmit={addTitle}>
           <div className="input-group mb-3">
-            <input type="text" className="form-control" placeholder="Add new article"
-              aria-label="Recipient's username" aria-describedby="button-addon2"
-              value={newTitle} onChange={e => setNewTitle(e.target.value)} />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Add new article title"
+              value={formData.title}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+            />
+          </div>
+          <div className="input-group mb-3">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="image"
+              value={formData.image}
+              onChange={(e) => setFormData({ ...formData, image: e.target.image })}
+            />
+          </div>
+          <div>
             <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Send</button>
           </div>
           <small id='titleHelperId' className='mb-3 form-text text-muted'>type your new title</small>
