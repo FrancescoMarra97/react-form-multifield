@@ -63,7 +63,15 @@ function App() {
               className="form-control"
               placeholder="image"
               value={formData.image}
-              onChange={(e) => setFormData({ ...formData, image: e.target.image })}
+              onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+            />
+          </div>
+          <div className="input-group mb-3">
+            <textarea
+              className="form-control"
+              placeholder="arcticle content"
+              value={formData.content}
+              onChange={(e) => setFormData({ ...formData, content: e.target.value })}
             />
           </div>
           <div>
