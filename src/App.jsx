@@ -45,7 +45,7 @@ function App() {
       <div className="container">
 
         <div>
-          <h1 className='mb-4'>Form</h1>
+          <h1 className='m-4'>New Article</h1>
         </div>
         <form onSubmit={addTitle}>
           <div className="input-group mb-3">
@@ -74,6 +74,18 @@ function App() {
               onChange={(e) => setFormData({ ...formData, content: e.target.value })}
             />
           </div>
+          <div className="input-group mb-3 d-flex align-items-center">
+            <label className='m-2'>Category: </label>
+            <select className='form-select' value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })}>
+              <option >Select a category</option>
+              <option value="Sports">Sports</option>
+              <option value="Tech">Tech</option>
+              <option value="Health">Health</option>
+              <option value="Tech">Coding News</option>
+              <option value="Tech">Videogames</option>
+            </select>
+          </div>
+
           <div>
             <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Send</button>
           </div>
