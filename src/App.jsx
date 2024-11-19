@@ -157,6 +157,18 @@ function App() {
 
             </div>
           </div>
+          <div className="form-check mb-3">
+            <input
+              id="published"
+              name='published'
+              type="checkbox"
+              className="form-check-input"
+              value={formData.published}
+              onChange={(e) => setFormData({ ...formData, published: e.target.value })}
+
+            />
+            <label className="form-check-label" htmlFor=""> Published </label>
+          </div>
           <div>
             <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Send</button>
           </div>
